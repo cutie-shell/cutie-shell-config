@@ -1,8 +1,13 @@
 [Unit]
 Description=Cutie Shell UI
 
-After=systemd-user-sessions.service
-After=plymouth-quit-wait.service
+Conflicts=getty@tty1.service
+After=getty@tty1.service
+
+After=systemd-user-sessions.service rc-local.service plymouth-quit-wait.service
+
+OnFailure=getty@tty1.service
+
 Wants=dbus.socket
 After=dbus.socket
 
