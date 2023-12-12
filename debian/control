@@ -1,0 +1,43 @@
+Source: cutie-shell-config
+Section: libs
+Maintainer: Cutie Shell Developers <admin@cutie-shell.org>
+Priority: optional
+Standards-Version: 4.5.1
+
+Package: cutie-shell-config
+Architecture: all
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, cutie-shell-config-mode
+Description: This package contains Cutie Shell configuration.
+
+Package: cutie-shell-config-convergence
+Architecture: any
+Multi-Arch: foreign 
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config
+Description: This package contains Cutie Shell configuration for convergent devices.
+
+Package: cutie-shell-config-desktop
+Architecture: any 
+Multi-Arch: foreign 
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config
+Description: This package contains Cutie Shell configuration for desktop devices.
+Provides: cutie-shell-config-mode
+Conflicts: cutie-shell-config-mobile
+
+Package: cutie-shell-config-hybris
+Architecture: any 
+Multi-Arch: foreign 
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config, qt6-qpa-hwcomposer-plugin
+Description: This package contains Cutie Shell configuration for hybris devices.
+
+Package: cutie-shell-config-mobile
+Architecture: any 
+Multi-Arch: foreign 
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config
+Description: This package contains Cutie Shell configuration for mobile devices.
+Provides: cutie-shell-config-mode
+Conflicts: cutie-shell-config-desktop

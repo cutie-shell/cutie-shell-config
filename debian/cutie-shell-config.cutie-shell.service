@@ -1,0 +1,44 @@
+[Unit]
+Description=Cutie Shell UI
+
+After=systemd-user-sessions.service
+After=plymouth-quit-wait.service
+Wants=dbus.socket
+After=dbus.socket
+
+After=session-c1.scope
+Before=graphical.target
+
+ConditionPathExists=/dev/tty0
+
+[Service]
+Environment=XDG_DATA_DIRS=~/.local/share:/usr/local/share/:/usr/share/
+Environment=QT_QPA_PLATFORM=eglfs
+Environment=QT_MEDIA_BACKEND=ffmpeg
+Environment=QT_QPA_GENERIC_PLUGINS=evdevkeyboard,evdevmouse:grab=1,evdevtouch,evdevtablet
+Environment=QT_QPA_EGLFS_DISABLE_INPUT=1
+ExecStart=/usr/bin/cutie-wlc
+TimeoutStartSec=30
+User=1000
+PAMName=login
+WorkingDirectory=~
+Restart=always
+RestartSec=5s
+
+# A virtual terminal is needed.
+TTYPath=/dev/tty7
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+
+# Fail to start if not controlling the tty.
+StandardInput=tty-fail
+StandardOutput=journal
+StandardError=journal
+
+# Log this user with utmp, letting it show up with commands 'w' and 'who'.
+UtmpIdentifier=tty7
+UtmpMode=user
+
+[Install]
+WantedBy=graphical.target
