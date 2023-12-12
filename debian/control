@@ -30,7 +30,7 @@ Package: cutie-shell-config-hybris
 Architecture: any 
 Multi-Arch: foreign 
 Pre-Depends: ${misc:Pre-Depends}
-Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config, qt6-qpa-hwcomposer-plugin
+Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config, qt6-qpa-hwcomposer-plugin, libqt6gui6-gles
 Description: This package contains Cutie Shell configuration for hybris devices.
 
 Package: cutie-shell-config-mobile
