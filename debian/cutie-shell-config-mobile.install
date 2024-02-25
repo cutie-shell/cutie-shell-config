@@ -1,1 +1,1 @@
-cutie-shell.service.d/10-mobile.conf etc/systemd/system/cutie-shell.service.d/
+cutie-shell.service.d/10-mobile.conf usr/lib/systemd/system/cutie-shell.service.d/

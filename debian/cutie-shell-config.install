@@ -1,1 +1,1 @@
-logind.conf.d/10-cutie.conf etc/systemd/logind.conf.d/
+logind.conf.d/10-cutie.conf usr/lib/systemd/logind.conf.d/

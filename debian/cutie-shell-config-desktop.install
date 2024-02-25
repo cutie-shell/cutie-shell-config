@@ -1,1 +1,1 @@
-cutie-shell.service.d/10-desktop.conf etc/systemd/system/cutie-shell.service.d/
+cutie-shell.service.d/10-desktop.conf usr/lib/systemd/system/cutie-shell.service.d/
