@@ -33,7 +33,7 @@ Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends}, ${shlibs:Depends}, cutie-shell-config,
   qt6-qpa-hwcomposer-plugin,
   qt6-sensors-sensorfw-plugin,
-  libqt6gui6-gles,
+  libqt6gui6t64-gles,
 Description: This package contains Cutie Shell configuration for hybris devices.
 
 Package: cutie-shell-config-mobile
